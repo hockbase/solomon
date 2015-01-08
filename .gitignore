@@ -15,7 +15,7 @@ build
 db.ini
 deploy_key_rsa
 
-# Back file£º
+# Back file:
 *.un~
 *.vim~
 *.bak
