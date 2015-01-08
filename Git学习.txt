@@ -1,0 +1,40 @@
+GIT 命令
+
+git init  			#建立git库
+git add $file 			#创建Git的文件
+git commit -m "$说明"	 	#创建改动说明
+git status 			#确定当前目录状态
+git diff $file 			#比较改动情况
+git log (--pretty=oneline)	#查看历史修改情况
+git reflog			#每一次命令的信息及commit id
+git reset --hard HEAD^(~100)	#回退到前一个版本（前100个版本）
+git reset --hard commit_id	#回退到指定的版本（cmmit_id）
+
+git branch			#查看分支
+git branch <name>		#创建分支
+git checkout <name>		#切换分支
+git checkout -b <name>		#创建+切换分支
+git merge <name>		#合并某分支到当前分支：
+git branch -d <name>		#删除分支
+git merge --no-ff -m "$说明" $分支名	#合并而强制不删除分支
+git stash			#储存当前现场而不更新分支
+git push origin $分支名		#推送分支到服务器
+git pull request		#为别人奉献优化代码，请求接收修改
+
+
+https://github.com/hockbase/solomon.git
+
+修改BUG流程
+git stash			#保存当前现场
+git checkout $分支名		#切换到问题分支
+git checkout -b $临时分支名	#创建临时分支
+vim $修改文件
+git add $修改的文件		#修改后的文件放到存储区
+git commit -m "$说明"		#更新本地git库
+git checkout $分支名		#切换到问题分支
+git merge --no-ff -m "$说明" $临时分支名	#合并更新后的临时分支到问题分支
+git branch -d $临时分支名	#删除临时分支
+git checkout $之前编辑的分支名	#切换回之前在编辑的分支
+git stash list			#查看刚才编辑的现场存在哪
+git stash pop （apply && drop）	#恢复刚刚编辑的现场同时删除stash（仅恢复现场&&删除stash）
+

@@ -19,4 +19,4 @@ deploy_key_rsa
 *.un~
 *.vim~
 *.bak
-#*.txt
+*.txt
