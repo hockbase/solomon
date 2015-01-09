@@ -21,6 +21,11 @@ git stash			#储存当前现场而不更新分支
 git push origin $分支名		#推送分支到服务器
 git pull request		#为别人奉献优化代码，请求接收修改
 
+git pull origin master		#从远程获得最新版本并合并到本地master
+git fetch origin master		#从远程获取最新版本到本地，不会自动merge
+
+
+
 
 https://github.com/hockbase/solomon.git
 
@@ -37,4 +42,10 @@ git branch -d $临时分支名	#删除临时分支
 git checkout $之前编辑的分支名	#切换回之前在编辑的分支
 git stash list			#查看刚才编辑的现场存在哪
 git stash pop （apply && drop）	#恢复刚刚编辑的现场同时删除stash（仅恢复现场&&删除stash）
+
+远程获得新版本流程
+git fetch origin master:tmp	#获得远程新版本到tmp分支上
+git diff tmp 			#比对改动
+git merge tmp			#合并改动到master
+
 
